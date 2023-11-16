@@ -1,0 +1,29 @@
+name: Deployment Project
+on: push
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code...
+        uses: actions/checkout@v3
+      - name: Install nodejs...
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - name: Install Deps...
+        run: npm ci
+      - name: Run Tests...
+        run: npm test
+  deploying:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code..
+        uses: actions/checkout@v3
+      - name: Install nodejs...
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - name: Install Deps...
+        run: npm ci
+      - name: Deploying....
+        run: echo "Is Deploying..."
