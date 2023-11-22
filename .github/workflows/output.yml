@@ -1,8 +1,0 @@
-name: Output the info github
-on: workflow_dispatch
-jobs:
-  output:
-    runs-on: ubuntu-latest
-    steps:
-      - name: added output info...
-        run: echo "${{ github }}"
